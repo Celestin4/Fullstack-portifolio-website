@@ -1,0 +1,37 @@
+.skill-bar {
+    margin-bottom: 2rem;
+  
+    .skill-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  
+    .progress {
+      height: 10px;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+      background-image: linear-gradient(to right, #ddd 50%, #007bff 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: background-position 1s ease-out;
+    }
+  
+    .progress.animated {
+      background-position: left bottom;
+    }
+  
+    .progress-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #666;
+      text-align: right;
+      transition: transform 1s ease-out;
+      transform: translateX(-100%);
+    }
+  
+    .progress-value.animated {
+      transform: translateX(0);
+    }
+  }
+  

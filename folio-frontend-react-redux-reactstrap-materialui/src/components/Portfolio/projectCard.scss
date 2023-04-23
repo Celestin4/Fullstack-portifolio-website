@@ -1,0 +1,29 @@
+.card {
+    width: 100%;
+
+    .cardImage {
+        max-width: 100%;
+    }
+
+    .cardBody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .cardTitle {
+            font-size: 1.7rem;
+        }
+
+        .project-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
+    }
+}
