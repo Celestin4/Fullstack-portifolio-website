@@ -55,7 +55,7 @@ const Header = () => {
             <Button tag={Link} to="/login" color="primary" className="mr-2 btn">Login</Button>
           </NavItem>
           <NavItem className='sign up'>
-            <Button tag={Link} to="/signup" color="secondary"className='mr-2 btn'>Sign up</Button>
+            <Button tag={Link} to="/signup" color="secondary"className='mr-2 btn'>Signup</Button>
           </NavItem>
           </>
           )}
