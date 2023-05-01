@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Header from "./components/Header/Header";
 import Hello from "./components/Hello/Hello";
 import About from "./components/About/About";
