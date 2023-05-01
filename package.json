@@ -1,7 +1,13 @@
 {
   "dependencies": {
+    "axios": "^1.3.6",
     "bcryptjs": "^2.4.3",
     "concurrently": "^8.0.1",
     "jsonwebtoken": "^9.0.0"
+  },
+  "scripts": {
+    "client": "npm start --prefix folio-frontend-react-redux-reactstrap-materialui",
+    "backend": "npm run server --prefix folio-backend-mongodb-express",
+    "dev": "concurrently \"npm run client\" \"npm run backend\""
   }
 }
