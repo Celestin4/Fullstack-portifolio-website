@@ -9,9 +9,9 @@ const Contact = () => {
 
       <Row className='row'>
           <Col className='blog_section_description'>
-            <h1>Contact Us</h1>
-            <p>I have developed different projects starting from my portifolio website
-            </p>
+            <h1>Contact Me</h1>
+            <p>I have developed different projects starting from my portifolio website <br />
+            If you want to see all of my project not listed here vist my Github</p>
           </Col>
       </Row>
 
@@ -30,4 +30,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default contact
