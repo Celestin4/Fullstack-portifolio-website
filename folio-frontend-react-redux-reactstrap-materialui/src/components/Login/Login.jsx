@@ -1,14 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { AuthContext } from '../../Features/AuthContext';
-
-
+import { useDispatch } from 'react-redux';
+import { loginAsync } from '../../Redux/Auth/authSlice';
 export default function SignIn() {
-  const { login } = useContext(AuthContext);
   
   const [loginInfo, setLoginInfo] = useState({
-
       email: '',
       password: ''
       
@@ -18,10 +15,14 @@ export default function SignIn() {
     const { name, value } = event.target;
     setLoginInfo({ ...loginInfo, [name]: value });
   }
-
+  const dispatch = useDispatch();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(loginInfo.email, loginInfo.password);
+      dispatch(loginAsync({ 
+      email: loginInfo.email,
+      password: loginInfo.password
+    }));
   };
 
   return (

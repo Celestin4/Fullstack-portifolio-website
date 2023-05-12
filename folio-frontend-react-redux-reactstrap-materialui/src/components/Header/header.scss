@@ -3,55 +3,27 @@
   top: 0;
   width: 100%;
   background-color: grey;
-  padding: 10px 0;
+  display: flex;
   z-index: 999;
+  justify-content: space-around;
+  align-items: center;
+ 
+  .collapse {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
-  .logo {
-    color: #fff;
-  }
-  .navLinks {
-   
-    .navItem {
 
-      .navLink {
-        color: #fff;
-        font-size: 1.4rem;
+    .nav {
 
-        &:hover {
-          color: yellow;
-        }
-        @media only screen and (max-width: 940px) {
-          font-size: 1rem;
-          padding: 0 5px;
-        }
-      }
-    }
+      .navItem {
 
-    
-  }
-
-  .sign {
-
-    .login {
-      margin-right: 20px;
-      .btn {
-        font-size: 1.2rem;
-
-        &:hover {
-          color: yellow;
-        }
-      }
-    }
-
-    .signup {
-      margin-right: 20px;
-      .btn {
-        font-size: 1.2rem;
-
-        &:hover {
-          color: yellow;
+        .navLink {
+          font-size: 15px
         }
       }
     }
   }
+  
 }

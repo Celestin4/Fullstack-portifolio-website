@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
+import "./blogCard.scss"
 import { FaHeart, FaComment, FaShare } from "react-icons/fa";
 
 const BlogCard = ({ blog }) => {
@@ -11,16 +12,25 @@ const BlogCard = ({ blog }) => {
         <p>{subtitles}</p>
         <CardImg top width="100%" src={imageUrl} alt={title} />
 
-        <div className="d-flex justify-content-center align-items-center">
-          <div>
-            <FaHeart className="mr-2" />
-            {likes}
-            <FaComment className="ml-3 mr-2" />
-            {comments}
-            <FaShare className="ml-3 mr-2" />
-            {shares}
-          </div>
-          <div>{views} views</div>
+        <div className="d-flex justify-content-center align-items-center user-actions">
+            <span>
+              <FaHeart className="" />
+              {likes}
+            </span>
+
+            <span>
+              <FaComment className="" />
+              {comments}
+            </span>
+            
+            <span>
+              <FaShare className="" />
+              {shares}
+            </span>
+
+            <span>
+            views {views}
+            </span>
         </div>
       </CardBody>
     </Card>

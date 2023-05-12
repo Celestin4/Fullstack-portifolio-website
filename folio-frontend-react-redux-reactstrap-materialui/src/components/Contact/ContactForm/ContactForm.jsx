@@ -122,10 +122,14 @@ const ContactForm = () => {
             </Label>
           </FormGroup>
         </Row>
-            
-            <Button color="primary" type="submit">
+
+        <Row className="d-flex justify-content-center">
+        <Button color="primary" type="submit">
               Submit
             </Button>
+        </Row>
+            
+            
        </Form>
     </>
   );

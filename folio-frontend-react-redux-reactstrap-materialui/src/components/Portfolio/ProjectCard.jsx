@@ -16,7 +16,7 @@ const ProjectCard = ({ id, imageUrl, title, githubLink }) => {
       <CardBody className="cardBody">
         <CardTitle className="cardTitle">{title}</CardTitle>
         <div className="project-actions">
-          <div className="rating-text">Rate this work:</div>
+          <div className="rating-text">Rate it:</div>
           <RatingStars
             count={5}
             value={rating}

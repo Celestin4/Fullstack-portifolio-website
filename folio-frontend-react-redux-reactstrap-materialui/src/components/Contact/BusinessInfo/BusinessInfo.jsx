@@ -4,15 +4,19 @@ import {Col} from 'reactstrap'
 const BusinessInfo = () => {
   return (
     <div>
-        <Col md={6}>
-          <h3>Contact Us</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
-            turpis suscipit, mollis justo vitae, ultricies nisl.
-          </p>
-          <p>Address: 123 Main St, Anytown USA 12345</p>
-          <p>Phone: (555) 555-1212</p>
-          <p>Email: info@company.com</p>
+        <Col>
+          <h3>Address</h3>
+          <div>
+            
+            <span>Reach to us any time</span>
+            <span>Monday to Friday</span>
+            <span>9h00 - 19h00 GMT</span>
+          </div>
+          
+          <p>Kigali city - RWanda</p>
+          <p>Kigali city Tower 2nd Floor</p>
+          <p>Phone: +250 780 470 310</p>
+          <p>Email: nteziryayocelestin4@gmail.com</p>
         </Col>
     </div>
   )

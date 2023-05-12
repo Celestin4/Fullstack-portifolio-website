@@ -1,69 +1,113 @@
-import React, { useState , useContext} from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, Button } from 'reactstrap';
-import { IoClose } from 'react-icons/io5';
+import React, { useState } from 'react';
+import { Nav, Navbar, NavbarBrand, NavItem, NavLink, Button, Collapse, NavbarToggler } from 'reactstrap';
+import { Link as ScrollLink } from 'react-scroll';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Features/AuthContext'
 
-import './header.scss'; 
+import './header.scss';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, authenticated , logout} = useContext(AuthContext);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen);
+
+  const linkStyle = {
+    cursor: 'pointer'
   };
 
   return (
-    <div>
-    <Navbar light expand="md" className="navbar justify-content-between">
-      <NavbarBrand tag= {Link} to="/" className='logo'>Celestin Ltd</NavbarBrand>
-      <NavbarToggler onClick={toggle} className=" bg-white">
-          {isOpen ? <IoClose size={30} /> : <span className="navbar-toggler-icon" />}
-        </NavbarToggler>
-      <Collapse isOpen={isOpen} navbar>
-        <Nav  className="navLinks mx-auto" navbar>
-          <NavItem className='navItem'>
-            <NavLink tag= {Link} to="/" className='navLink'>Home</NavLink>
+    <Navbar dark expand="md" className="navbar">
+      <NavbarBrand href="/" className="logo">CELESTIN</NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar className="collapse">
+        <Nav className="nav ml-auto align-items-center" navbar>
+          <NavItem className="navItem">
+            <NavLink className="navLink">
+              <ScrollLink
+                activeClass="active"
+                to="hello"
+                spy={true}
+                offset={-100}
+                smooth={true}
+                duration={500}
+                style={linkStyle}
+              >
+                Home
+              </ScrollLink>
+            </NavLink>
           </NavItem>
-          <NavItem className='navItem'>
-            <NavLink tag= {Link} to="/about" className='navLink'>About Me</NavLink>
+          <NavItem className="navItem">
+            <NavLink className="navLink">
+              <ScrollLink
+                activeClass="active"
+                to="about"
+                spy={true}
+                offset={-100}
+                smooth={true}
+                duration={500}
+                style={linkStyle}
+              >
+                About
+              </ScrollLink>
+            </NavLink>
           </NavItem>
-          <NavItem className='navItem'>
-            <NavLink tag= {Link}  className='navLink'>Portfolio</NavLink>
+          <NavItem className="navItem">
+            <NavLink className="navLink">
+              <ScrollLink
+                activeClass="active"
+                to="portfolio"
+                spy={true}
+                offset={-100}
+                smooth={true}
+                duration={500}
+                style={linkStyle}
+              >
+                Portfolio
+              </ScrollLink>
+            </NavLink>
           </NavItem>
-          <NavItem className='navItem'>
-            <NavLink tag= {Link} Link to="/blog" className='navLink'>Blog</NavLink>
+          <NavItem className="navItem">
+            <NavLink className="navLink">
+              <ScrollLink
+                activeClass="active"
+                to="blog"
+                spy={true}
+                offset={-100}
+                smooth={true}
+                duration={100}
+                style={linkStyle}
+              >
+                Blog
+              </ScrollLink>
+            </NavLink>
           </NavItem>
-          <NavItem className='navItem'>
-            <NavLink tag= {Link} to="/contact" className='navLink'>Contact Me</NavLink>
+          <NavItem className="navItem">
+            <NavLink className="navLink">
+              <ScrollLink
+                activeClass="active"
+                to="contact"
+                spy={true}
+                offset={-100}
+                smooth={true}
+                duration={500}
+                style={linkStyle}
+              >
+                Contact
+              </ScrollLink>
+            </NavLink>
           </NavItem>
-        </Nav>
-        <Nav className='sign'>
-          {authenticated ? (
-            <>
-            {user && <h1>{user.email}</h1>}
-            <NavItem className='logout'>
-            <Button onClick={logout} color="primary" className="mr-2 btn">Logout</Button>
+          <NavItem>
+            <NavLink>
+              <Button color="primary" className="mr-2" tag={Link} to="/login">Log In</Button>
+            </NavLink>
           </NavItem>
-          
-          </>
-          ) : (
-            <>
-            
-            <NavItem className='login'>
-            <Button tag={Link} to="/login" color="primary" className="mr-2 btn">Login here</Button>
+          <NavItem>
+            <NavLink>
+              <Button color="secondary" tag={Link} to="/signup">Sign Up</Button>
+            </NavLink>
           </NavItem>
-          <NavItem className='sign up'>
-            <Button tag={Link} to="/signup" color="secondary"className='mr-2 btn'>Signup</Button>
-          </NavItem>
-          </>
-          )}
-          
         </Nav>
       </Collapse>
     </Navbar>
-  </div>
   );
 };
 
