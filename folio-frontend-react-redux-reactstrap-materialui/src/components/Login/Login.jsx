@@ -1,31 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux'
 import { loginAsync } from '../../Redux/Auth/authSlice';
+import { useNavigate } from "react-router-dom";
+
 export default function SignIn() {
-  
+
   const [loginInfo, setLoginInfo] = useState({
-      email: '',
-      password: ''
-      
-    });
+    email: '',
+    password: ''
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setLoginInfo({ ...loginInfo, [name]: value });
-  }
+  };
+
   const dispatch = useDispatch();
-  
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+  const user = useSelector(state => state.auth.user);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-      dispatch(loginAsync({ 
+    await dispatch(loginAsync({ 
       email: loginInfo.email,
       password: loginInfo.password
     }));
   };
 
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
   return (
+    
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Box

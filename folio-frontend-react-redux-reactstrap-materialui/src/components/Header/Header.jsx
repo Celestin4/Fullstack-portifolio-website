@@ -13,7 +13,6 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
   const dispatch = useDispatch()
   const user = useSelector(state => state.auth.user);
-console.log(user)
 
  const handleLogout = () => {
     dispatch(logout());
@@ -27,7 +26,7 @@ console.log(user)
   return (
     <Navbar dark expand="md" className="navbar">
       <NavbarBrand href="/" className="logo">CELESTIN</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
+      
       <Collapse isOpen={isOpen} navbar className="collapse">
         <Nav className="nav ml-auto align-items-center" navbar>
           <NavItem className="navItem">
@@ -105,7 +104,12 @@ console.log(user)
               </ScrollLink>
             </NavLink>
           </NavItem>
-          <Nav>
+          
+          
+        </Nav>
+      </Collapse>
+      
+      <Nav>
             {user ? (
               <>
                 <NavItem>
@@ -120,6 +124,7 @@ console.log(user)
                     </div>  
                   )}
                 </NavLink>
+                
                 </NavItem>
                 <NavItem>
                 <NavLink>
@@ -143,9 +148,7 @@ console.log(user)
             )}
             
           </Nav>
-          
-        </Nav>
-      </Collapse>
+          <NavbarToggler onClick={toggle} />
     </Navbar>
   );
 };
