@@ -17,7 +17,7 @@ const Portfolio = () => {
       </Row>
       <Row className="projects">
         {projects.map((project) => (
-          <Col key={nanoid()} md ={4}>
+          <Col key={nanoid()} md ={6}>
             <ProjectCard {...project} />
           </Col>
         ))}

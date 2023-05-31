@@ -17,6 +17,7 @@ const Header = () => {
  const handleLogout = () => {
     dispatch(logout());
   };
+
   const linkStyle = {
     cursor: 'pointer'
   };
@@ -26,9 +27,10 @@ const Header = () => {
   return (
     <Navbar dark expand="md" className="navbar">
       <NavbarBrand href="/" className="logo">CELESTIN</NavbarBrand>
+      <NavbarToggler onClick={toggle} className="toggler"/>
       
       <Collapse isOpen={isOpen} navbar className="collapse">
-        <Nav className="nav ml-auto align-items-center" navbar>
+        <Nav className="navLinks  align-items-center" navbar>
           <NavItem className="navItem">
             <NavLink className="navLink">
               <ScrollLink
@@ -104,16 +106,11 @@ const Header = () => {
               </ScrollLink>
             </NavLink>
           </NavItem>
-          
-          
-        </Nav>
-      </Collapse>
-      
-      <Nav>
+          <Nav className="sign">
             {user ? (
-              <>
-                <NavItem>
-                <NavLink>
+              <Nav className='loged_in'>
+                <NavItem className="navItem">
+                <NavLink className="username">
                   {profilePhoto ?  (
                     <div className="avatar-circle">
                     <img src="/path/to/user-image.jpg" alt="User" />
@@ -125,15 +122,15 @@ const Header = () => {
                   )}
                 </NavLink>
                 
-                </NavItem>
+                </NavItem >
                 <NavItem>
                 <NavLink>
                   <Button color="primary" className="mr-2" onClick={handleLogout}>Logout</Button>
                 </NavLink>
                 </NavItem>
-              </>
+              </Nav>
             ) : (
-              <>
+              <Nav className='not_loged_in'>
                 <NavItem>
                 <NavLink>
                   <Button color="primary" className="mr-2" tag={Link} to="/login">Log In</Button>
@@ -144,11 +141,14 @@ const Header = () => {
                   <Button color="secondary" tag={Link} to="/signup">Sign Up</Button>
                 </NavLink>
                 </NavItem>
-            </>
+            </Nav>
             )}
             
           </Nav>
-          <NavbarToggler onClick={toggle} />
+        </Nav>
+      </Collapse>
+      
+      
     </Navbar>
   );
 };

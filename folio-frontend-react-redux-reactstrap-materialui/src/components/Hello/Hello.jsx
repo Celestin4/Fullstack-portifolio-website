@@ -1,5 +1,7 @@
 import React from 'react';
 import { Row, Col, Container, Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import myphot from "../../assets/image/PROFILE PICTURE 1.png"
 import "./hello.scss"
 
@@ -12,11 +14,10 @@ const Hello = () => {
           <h1>I'm Celestin</h1>
           <h2>Fullstack developer</h2>
           <p>
-          I driven by sharpen and competetive edge of your business. <br/>
-          A responsive website is my choice to you
+          I driven by sharpen and competetive edge of your business. A responsive website is my choice to you
           </p>
-          <div className="d-flex justify-content-center mt-10">
-            <Button color="primary">Resume</Button>
+          <div className="resume">
+            <Button color="primary" className="download_resume"><FontAwesomeIcon icon={faDownload} className="download_icon"/>Resume</Button>
           </div>
         </Col>
 

@@ -9,12 +9,10 @@ const EducationItem = ({ institution, field }) => {
   }, []);
 
   return (
-    <>
-      <div className="education-item" data-aos="fade-up" data-aos-duration="1000">
+      <div className="education-item" data-aos="slide-right" data-aos-duration="1000">
         <h2>{field}</h2>
         <p>{institution}</p>
       </div>
-    </>
   );
 };
 

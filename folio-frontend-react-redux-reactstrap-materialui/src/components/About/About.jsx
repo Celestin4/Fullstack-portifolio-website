@@ -10,7 +10,7 @@ import "./about_me.scss"
 
 const About = () => {
   return (
-    <div className="container fluid about_me" id="about">
+    <div className="container-fluid about_me" id="about">
 
       <Row className='row'>
         <Col className='about_me_description'>

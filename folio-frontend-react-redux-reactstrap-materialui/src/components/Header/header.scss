@@ -2,24 +2,51 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: grey;
-  display: flex;
+  background-color: black;
   z-index: 999;
-  justify-content: space-around;
-  align-items: center;
+  
+  .show {
+    width: 50%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
  
-  .collapse {
-    
+    .navLinks {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
 
-    .nav {
-
+      @media only screen and (max-width: 768px) {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
       .navItem {
 
         .navLink {
-          font-size: 15px
+          font-size: 15px;
+          color: #fff;
+        }
+      }
+
+      .sign {
+
+        .loged_in {
+
+        }
+
+        .not_loged_in {
+          @media only screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
     }
+
+    
   }
   
 }

@@ -13,11 +13,11 @@ const SkillBar = ({ skill, progress }) => {
   }, []);
 
   return (
-    <div className="skill-bar" data-aos="fade-up">
+    <div className="skill-bar" data-aos="slide-left">
       <div className="skill-name">{skill}</div>
       <Progress value={progress} className={isAnimated ? 'animated' : ''} />
       <div className={`progress-value ${isAnimated ? 'animated' : ''}`}>
-        {progress}%
+        {progress}
       </div>
     </div>
   );

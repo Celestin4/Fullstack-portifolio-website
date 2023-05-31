@@ -1,21 +1,19 @@
 .hello_section {
   width: 100%;
-  padding: 100px 30px 0 30px;
+  padding: 100px 30px 20px 30px;
+  background-color: grey;
 
-  @media only screen and (max-width: 768px) {
-    padding: 140px 10px 0 10px;
+  @media only screen and (max-width: 920px) {
+    padding: 100px 10px 20px 10px;
   }
 
   .row {
-    height: 100%;
-
     .hello_text_column {
-       height: 100vh;
 
       h2 {
         font-size: 3rem;
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 920px) {
           font-size: 2rem;
           text-align: center;
         }
@@ -26,8 +24,8 @@
       h1 {
         font-size: 5rem;
 
-        @media only screen and (max-width: 768px) {
-          font-size: 3rem;
+        @media only screen and (max-width: 920px) {
+          font-size: 1rem;
           text-align: center;
         }
       }
@@ -35,46 +33,61 @@
       p {
         font-size: 1.7rem;
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 920px) {
           font-size: 1rem;
-          text-align: center
         }
       }
 
-      .resune {
-        
+      .resume {
+        margin: 60px 0;
+        display: flex;
+        justify-content: flex-start;
+
+        @media only screen and (max-width: 920px) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .download_resume {
+          font-size: 1.7rem;
+          .download_icon {
+            margin-right: 20px;
+          }
+        }
       }
     }
    
     .hello_image_column {
-      height: 100vh;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
 
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 920px) {
         justify-content: center;
+        align-items: center;
+
 
       }
 
 
       .img_circle {
         width: 80%;
-        height: 40vw;
         background: blue;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        aspect-ratio: 1;
 
         img {
           max-width: 100%;
+          aspect-ratio: 1;
           object-fit: cover;
         }
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 920px) {
           width: 80%;
-          height: 80vw;
         }
       }
       
